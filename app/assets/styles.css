@@ -24,8 +24,36 @@ a:hover{
   color: #00b0ff;
 }
 
-h1{
+.form-search{
+  margin: auto;
   text-align: center;
+}
+
+.form-search input{
+  display: block;
+  margin: auto;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+
+.grid-fluid{
+  margin: 1rem auto;
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.header{
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+.header > * {
+  margin: 1.5rem auto;
 }
 
 img{
@@ -40,6 +68,7 @@ img{
   text-align: center;
   color: white;
   background-color: #e9273b;
+  /* background-color: #3d3d3d; */
 }
 
 .loader{
@@ -48,3 +77,16 @@ img{
   width: 4rem;
   height: auto;
 }
+
+.post-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #eceff1;
+}
+
+.post-card p{
+  display: flex;
+  justify-content: space-between;
+}
+

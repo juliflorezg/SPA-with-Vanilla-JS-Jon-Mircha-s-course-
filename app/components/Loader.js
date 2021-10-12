@@ -2,7 +2,7 @@ export function Loader(){
 
   const $loader = document.createElement("img")
 
-  $loader.src = "app/assets/loader_puff.svg"
+  $loader.src = "app/assets/ball-triangle.svg"
   $loader.alt = "Cargando..."
   $loader.classList.add("loader")
 
