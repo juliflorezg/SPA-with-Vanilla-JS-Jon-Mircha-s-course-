@@ -32,3 +32,19 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+.error{
+  padding: 1rem;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #e9273b;
+}
+
+.loader{
+  display: block;
+  margin: 2rem auto;
+  width: 4rem;
+  height: auto;
+}
