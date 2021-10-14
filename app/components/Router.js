@@ -10,14 +10,19 @@ export async function Router (){
   const d = document,
     w = window,
     $main = d.getElementById("main")
+
+  // let page = 1,
+  //   perPage = 8
     
   let { hash } = location 
 
   console.log(hash)
+  // console.log(`${api.POSTS}?page=${page}?per_page=${perPage}`)
+
 
   if(!hash || hash === "#/"){
     await ajax({
-      url: api.POSTS,
+      url: `${api.POSTS}`, //?page=${page}?per_page=${perPage}
       options:{
         cache: "reload"
       },
@@ -28,8 +33,11 @@ export async function Router (){
         posts.forEach(post => html += PostCard(post));
         // d.querySelector(".loader").style.display = "none"
         $main.innerHTML = html
+        console.log(api.POSTS)
       }
     })
+
+    
   } else if(hash.includes("#/search")){
     // $main.innerHTML = `<h2>Sección de busqueda</h2>`
     // d.querySelector(".loader").style.display = "none"
