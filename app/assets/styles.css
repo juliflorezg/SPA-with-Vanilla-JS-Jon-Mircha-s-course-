@@ -50,6 +50,8 @@ a:hover{
   top: 0;
   text-align: center;
   background-color: #fff;
+  z-index: 2
+  ;
 }
 
 .header > * {
@@ -71,6 +73,14 @@ img{
   /* background-color: #3d3d3d; */
 }
 
+.error mark{
+  display: inline-block;
+  padding: .5rem;
+  border-radius: .5rem;
+  color: #fff;
+  background-color: #01579b;
+}
+
 .loader{
   display: block;
   margin: 2rem auto;
@@ -90,3 +100,74 @@ img{
   justify-content: space-between;
 }
 
+.post-page{
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #eceff1;
+}
+
+.post-page > aside{
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+
+.post-page > hr{
+ border: thin solid #cfd8dc;
+ margin: 2rem auto;
+ width: 80%;
+}
+
+.post-page time{
+  margin: 1rem auto;
+  display: block;
+}
+
+.post-time > article{
+  padding: 0 2rem;
+}
+
+.post-page img,
+.post-page audio,
+.post-page iframe,
+.post-page video{
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
+
+
+
+
+
+.stack {
+  display: grid;
+  width: fit-content;
+  margin: 3rem auto;
+
+}
+.stack > * {
+  grid-area: 1 / -1;
+}
+
+.title {
+  align-self: end;
+  justify-self: start;
+  padding: 1rem;
+  font: 900 32px system-ui;
+}
+
+.tag {
+  justify-self: end;
+  align-self: start;
+  margin-block-start: 1rem;
+  font: 500 18px system-ui;
+  padding: 1rem;
+  background: limegreen;
+}
+
+.stack img {
+  max-width: 100%;
+  min-width: 280px;
+}
