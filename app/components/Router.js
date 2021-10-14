@@ -2,18 +2,19 @@ import api from "../helpers/wp_api.js"
 import { PostCard } from "./PostCard.js"
 import { ajax } from "../helpers/ajax.js"
 
-export function Router (){
+//declarar la función Router como async para que espere la llegada del recurso json, una vez llegue ya puede seguir con la ejecución normal del programa, que es el ocultar el loader con display: none
+export async function Router (){
 
   const d = document,
     w = window,
-    $posts = d.getElementById("posts")
+    $main = d.getElementById("main")
     
   let { hash } = location 
 
   console.log(hash)
 
   if(!hash || hash === "#/"){
-    ajax({
+    await ajax({
       url: api.POSTS,
       options:{
         cache: "reload"
@@ -23,16 +24,25 @@ export function Router (){
   
         let html = ""
         posts.forEach(post => html += PostCard(post));
-        d.querySelector(".loader").style.display = "none"
-        $posts.innerHTML = html
+        // d.querySelector(".loader").style.display = "none"
+        $main.innerHTML = html
       }
     })
   } else if(hash.includes("#/search")){
-    $posts.innerHTML = `<h2>Sección de busqueda</h2>`
+    $main.innerHTML = `<h2>Sección de busqueda</h2>`
+    // d.querySelector(".loader").style.display = "none"
+
   } else if(hash === "#/contact"){
-    $posts.innerHTML = `<h2>Sección de contacto</h2>`
+    $main.innerHTML = `<h2>Sección de contacto</h2>`
+    // d.querySelector(".loader").style.display = "none"
+
   } else {
-    $posts.innerHTML = `<h2>Aquí cargará el contenido del post</h2>`
+    $main.innerHTML = `<h2>Aquí cargará el contenido del post</h2>`
+    // d.querySelector(".loader").style.display = "none"
+
   }
+
+  d.querySelector(".loader").style.display = "none"
+
 
 }

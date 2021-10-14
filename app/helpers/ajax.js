@@ -1,10 +1,10 @@
 // import { Loader } from "../components/Loader.js"
 
-export function ajax(props){
+export async function ajax(props){
 
   let{url, options, cbSuccess} = props
 
-  fetch(url,{options})
+  await fetch(url,{options})
   .then(res => res.ok ? res.json() : Promise.reject(res))
   .then(json => cbSuccess(json))
   .catch(err => {
@@ -13,7 +13,7 @@ export function ajax(props){
     let error = err.status || "",
       message = err.statusText || "Ocurrió un error al acceder a la API"
     
-    document.getElementById("posts").innerHTML = `
+    document.getElementById("main").innerHTML = `
     <div class="error">
       <p>Error ${error}: ${message}</p>
     </div>`
