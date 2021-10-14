@@ -1,6 +1,6 @@
 import { Header } from "./components/Header.js"
 import { Loader } from "./components/Loader.js"
-import { Posts } from "./components/Posts.js"
+import { Main } from "./components/Main.js"
 import { Router } from "./components/Router.js"
 
 
@@ -27,8 +27,11 @@ export function App (){
 
   const $root = document.getElementById("root")
 
+    console.log($root)
+
+    $root.innerHTML = null  // Esta linea permite que no se vuelvan a crear los elementos del header, post y loader cuando se cambia de vista gracias al envento hashchange
     $root.appendChild(Header())
-    $root.appendChild(Posts())
+    $root.appendChild(Main())
     $root.appendChild(Loader())
 
     Router()
